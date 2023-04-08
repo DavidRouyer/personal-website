@@ -1,0 +1,69 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 1440 800"
+  width="100%"
+  height="100vh"
+  preserveAspectRatio="xMidYMid meet"
+  class={className}
+>
+  <defs>
+    <mask id="cardMask">
+      <rect rx="0" ry="0" fill="#fff" width="1440" height="800"></rect>
+    </mask>
+
+    <path
+      id="star"
+      fill="#fff"
+      d="M10.5,11c2-2,4-6,4-6s0.5,2.5,3,5c4,4,6,4,6,4s-2,1-5,4s-4,6-4,6s-1.5-3.5-4-6S5,14.5,5,14.5S8.5,13,10.5,11z"
+    ></path>
+  </defs>
+
+  <g mask="url(#cardMask)">
+    <use class="star" href="#star"></use>
+    <circle class="star" cx="9" cy="9" r="9" fill="#fff"></circle>
+    <circle class="star" cx="15" cy="15" r="15" fill="#fff"></circle>
+    <use class="star" href="#star"></use>
+  </g>
+</svg>
+<style>
+  svg {
+    opacity: 0;
+  }
+</style>
+<script>
+  import { gsap } from "gsap";
+  const tl = gsap
+    .timeline()
+    .set("svg", { opacity: 1 });
+
+  document.querySelectorAll(".star").forEach(function (s) {
+    gsap.fromTo(
+      s,
+      {
+        x: () => Math.random() * 1440,
+        y: () => Math.random() * 800,
+        scale: 0,
+        transformOrigin: "50% 50%",
+      },
+      {
+        scale: 1,
+        yoyo: true,
+        repeat: -1,
+        repeatRefresh: true,
+        duration: () => gsap.utils.random(0.6, 1),
+        ease: "power1.inOut",
+        delay: Math.random(),
+      }
+    );
+  });
+
+  window.onclick = () => tl.play(0);
+</script>
