@@ -101,16 +101,7 @@ declare module 'astro:content' {
 	>;
 
 	const entryMap: {
-		"blog": {
-"first-blog-post.md": {
-  id: "first-blog-post.md",
-  slug: "adding-new-posts-in-astropaper-theme",
-  body: string,
-  collection: "blog",
-  data: any
-} & { render(): Render[".md"] },
-},
-
+		
 	};
 
 	type ContentConfig = never;
