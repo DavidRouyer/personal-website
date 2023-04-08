@@ -20,7 +20,16 @@ export const ui = {
     "nav.home": "Home",
     "nav.about": "About",
     "nav.twitter": "Twitter",
-    "copyright": "All rights reserved"
+    "copyright": "All rights reserved",
+    "resume.title": "Work",
+    "resume.senior-front-end-developer": "Senior Front-end Developer",
+    "resume.company": "Company",
+    "resume.date": "Date",
+    "resume.cto": "CTO",
+    "resume.role": "Role",
+    "resume.fullstack-developer": "Fullstack Developer",
+    "resume.software-engineer": "Software Engineer",
+    "resume.present": "Present"
   },
   fr: {
     "title": "David Rouyer - Développeur Web",
@@ -36,6 +45,15 @@ export const ui = {
     "nav.home": "Acceuil",
     "nav.about": "À propos",
     "nav.twitter": "Twitter",
-    "copyright": "Tous droits réservés"
+    "copyright": "Tous droits réservés",
+    "resume.title": "Expérience",
+    "resume.senior-front-end-developer": "Développeur Front-end Senior",
+    "resume.company": "Entreprise",
+    "resume.date": "Date",
+    "resume.cto": "CTO",
+    "resume.role": "Poste",
+    "resume.fullstack-developer": "Développeur Fullstack",
+    "resume.software-engineer": "Ingénieur Logiciel",
+    "resume.present": "Aujourd'hui"
   },
 } as const;

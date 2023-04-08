@@ -3,11 +3,6 @@ import Resume from "../../components/resume.astro";
 import SvgHeader from "../../components/svg-header.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from 'astro:content';
-
-const articles = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -48,16 +43,11 @@ const t = useTranslations(lang);
         </p>
       </div>
     </section>
-    <!--section class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-      <div class="flex flex-col gap-16">
-        {articles.map((article) => (
-          <Article article={article} />
-        ))}
-      </div>
-      <div class="space-y-10 lg:pl-16 xl:pl-24">
+    <section class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none mt-24 md:mt-28">
+      <div class="space-y-10 mx-auto">
         <Resume />
       </div>
-    </section-->
+    </section>
   </main>
   <footer class="mt-32">
     <div class="mx-auto max-w-7xl lg:px-8">
@@ -80,10 +70,3 @@ const t = useTranslations(lang);
     </div>
   </footer>
 </Layout>
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap");
-  html,
-  body {
-    font-family: "Montserrat", sans-serif;
-  }
-</style>
