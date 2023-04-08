@@ -2,9 +2,11 @@
 import Resume from "../components/resume.astro";
 import SvgHeader from "../components/svg-header.astro";
 import Layout from "../layouts/Layout.astro";
-import type { Frontmatter } from "../types";
+import { getCollection } from 'astro:content';
 
-const articles = await Astro.glob<Frontmatter>("../contents/**/*.md");
+const articles = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <Layout title="David Rouyer - Web Developer">
