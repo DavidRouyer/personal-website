@@ -3,6 +3,7 @@ import Resume from "../../components/resume.astro";
 import SvgHeader from "../../components/svg-header.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
+import GitHubIcon from "../../components//github-icon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -21,6 +22,11 @@ const t = useTranslations(lang);
         <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
           {t('description')}
         </p>
+        <div class="mt-6 flex gap-6">
+          <a class="group -m-1 p-1" href="https://github.com" aria-label="Follow on GitHub">
+            <GitHubIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+        </div>
       </div>
     </section>
     <section
