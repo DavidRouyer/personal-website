@@ -15,21 +15,21 @@ const { class: className } = Astro.props;
   class={className}
 >
   <defs>
-    <mask id="cardMask">
-      <rect rx="0" ry="0" fill="#fff" width="1440" height="800"></rect>
+    <mask id="cardMask" class="text-zinc-800 dark:text-zinc-100">
+      <rect rx="0" ry="0" fill="currentColor" width="1440" height="800"></rect>
     </mask>
 
     <path
       id="star"
-      fill="#fff"
+      fill="currentColor"
       d="M10.5,11c2-2,4-6,4-6s0.5,2.5,3,5c4,4,6,4,6,4s-2,1-5,4s-4,6-4,6s-1.5-3.5-4-6S5,14.5,5,14.5S8.5,13,10.5,11z"
     ></path>
   </defs>
 
-  <g mask="url(#cardMask)">
+  <g mask="url(#cardMask)" class="text-zinc-800 dark:text-zinc-100">
     <use class="star" href="#star"></use>
-    <circle class="star" cx="9" cy="9" r="9" fill="#fff"></circle>
-    <circle class="star" cx="15" cy="15" r="15" fill="#fff"></circle>
+    <circle class="star" cx="9" cy="9" r="9" fill="currentColor"></circle>
+    <circle class="star" cx="15" cy="15" r="15" fill="currentColor"></circle>
     <use class="star" href="#star"></use>
   </g>
 </svg>
