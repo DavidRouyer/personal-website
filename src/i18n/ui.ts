@@ -26,7 +26,7 @@ export const ui = {
     "title": "David Rouyer - Développeur Web",
     "description": "Je suis David, un développeur basé à Strasbourg. Je suis spécialisé dans le développement web chez Choose, où nous mettons en avant les marques de demain.",
     "index.title": "Développeur et passionné de vélo",
-    "index.expertise": "J'ai des compétences sur",
+    "index.expertise": "Mes compétences",
     "back-end": "Back-end",
     "building-apis": "Construire de puissantes APIs consommables sur le front-end en utilisant différentes langages et outil",
     "building-applications": "Construire des applications complexes et hautement interactives avec un focus sur les performances et l'accessibilité",
